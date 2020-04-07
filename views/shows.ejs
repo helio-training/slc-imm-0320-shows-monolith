@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form>
+        <input id='title' type='text' placeholder='Title'>
+        <input id='numSeasons' type='number' placeholder='Seasons'>
+        <input id='desc' type='text' placeholder='Description'>
+        <button id='addShow' type='button'>Add Show</button>
+    </form>
+    <ul>
+        <% for(let i = 0; i < data.length; i++ ) { %>
+            <li>
+                <%= data[i].title %> : <%= data[i].desc %> 
+                <button class='delete' id="<%= data[i].id %>">Delete</button>
+            </li>
+        <% } %>
+    </ul>
+    <script src='/javascripts/shows.js'></script>
+</body>
+
+</html>
